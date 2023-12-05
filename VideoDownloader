@@ -1,0 +1,14 @@
+1. Download
+Live Stream Downloader
+https://webextension.org/listing/hls-downloader.html
+
+many .ts files 
+
+2. Combine
+# Win+R -> cmd:
+copy /b InDir\*.ts OutDir\out.ts
+# (1-9, 10-99, 100-999 due to the naming order 1,10,2...)
+
+3. Transform to .mp4
+# input.ts, output.mp4
+ffmpeg -i input.ts -c copy -map 0:v -map 0:a -bsf:a aac_adtstoasc output.mp4
